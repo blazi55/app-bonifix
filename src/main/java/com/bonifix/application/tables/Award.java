@@ -1,4 +1,4 @@
-package com.bonifix.application.relationships_jpa.tables;
+package com.bonifix.application.tables;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

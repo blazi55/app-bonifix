@@ -1,4 +1,4 @@
-package com.bonifix.application.relationships_jpa.excptions;
+package com.bonifix.application.excptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

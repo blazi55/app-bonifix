@@ -1,4 +1,4 @@
-package com.bonifix.application.relationships_jpa.tables;
+package com.bonifix.application.tables;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,12 +10,12 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
-@Table(name = "COMPANY")
+@Table(name = "USER_ACCOUNT")
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Company {
+public class UserAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,8 +23,13 @@ public class Company {
 
     @Column
     @NotNull
-    private String name;
+    private Long balance;
 
-    @OneToMany(mappedBy = "company")
-    private List<Company> companyRole;
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", unique = true)
+    private User user;
+
+    @OneToMany(mappedBy = "userAccount")
+    private List<UserAward> userAward;
+
 }

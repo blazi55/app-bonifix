@@ -1,4 +1,4 @@
-package com.bonifix.application.relationships_jpa.excptions;
+package com.bonifix.application.excptions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
