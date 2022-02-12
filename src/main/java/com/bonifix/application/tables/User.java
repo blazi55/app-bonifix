@@ -36,7 +36,7 @@ public class User {
     @NotNull
     private String lastname;
 
-    @OneToOne (mappedBy = "user")
+    @OneToOne(mappedBy = "user")
     private UserAccount userAccount;
 
     @OneToOne(mappedBy = "user")
