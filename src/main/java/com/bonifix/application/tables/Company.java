@@ -26,5 +26,5 @@ public class Company {
     private String name;
 
     @OneToMany(mappedBy = "company")
-    private List<Company> companyRole;
+    private List<CompanyRole> companyRole;
 }
