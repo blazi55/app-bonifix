@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "USER")
@@ -35,6 +36,14 @@ public class User {
     @Column
     @NotNull
     private String lastname;
+
+    @Column
+    @NotNull
+    private String pesel;
+
+    @Column
+    @NotNull
+    private LocalDateTime creationDate;
 
     @OneToOne(mappedBy = "user")
     private UserAccount userAccount;
