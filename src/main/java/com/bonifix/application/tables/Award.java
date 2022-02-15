@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(name = "AWARD")
@@ -28,7 +29,10 @@ public class Award {
     @NotNull
     private String name;
 
+    @OneToMany(mappedBy = "award")
+    private List<UserAward> userAward;
+
     @ManyToOne
-    @JoinColumn(name = "user_award_id", referencedColumnName = "id")
-    private UserAward userAward;
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    private Company company;
 }

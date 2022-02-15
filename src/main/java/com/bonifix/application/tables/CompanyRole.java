@@ -20,7 +20,7 @@ public class CompanyRole {
     private Long id;
 
     @OneToOne
-    @JoinColumn (name = "user_id", referencedColumnName = "id", unique = true)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", unique = true)
     private User user;
 
     @ManyToOne

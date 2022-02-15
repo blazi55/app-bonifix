@@ -24,6 +24,7 @@ public class UserAward {
     @JoinColumn(name = "user_account_id", referencedColumnName = "id")
     private UserAccount userAccount;
 
-    @OneToMany(mappedBy = "userAward")
-    private List<Award> awards;
+    @ManyToOne
+    @JoinColumn(name = "award_id", referencedColumnName = "id")
+    private Award award;
 }

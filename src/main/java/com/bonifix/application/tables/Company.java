@@ -27,4 +27,7 @@ public class Company {
 
     @OneToMany(mappedBy = "company")
     private List<CompanyRole> companyRole;
+
+    @OneToMany(mappedBy = "company")
+    private List<Award> awards;
 }

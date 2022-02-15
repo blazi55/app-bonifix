@@ -17,4 +17,5 @@ public class ErrorDto {
     private Integer status;
     private String path;
     private LocalDateTime timestamp;
+
 }

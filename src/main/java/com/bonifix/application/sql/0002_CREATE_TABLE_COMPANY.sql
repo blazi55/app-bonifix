@@ -3,7 +3,7 @@ create table company (
     name varchar(100)
 );
 
-create table companyrole (
+create table company_role (
     id bigint primary key,
     user_id bigint unique,
     company_id bigint,

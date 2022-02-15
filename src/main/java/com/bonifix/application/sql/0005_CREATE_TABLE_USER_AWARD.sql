@@ -1,4 +1,4 @@
-create table user_award(
+create table user_award (
     id bigint primary key,
     user_account_id bigint,
     award_id bigint,
