@@ -1,5 +1,5 @@
 create table user_award (
-    id bigint primary key,
+    id bigint auto_increment primary key,
     user_account_id bigint,
     award_id bigint,
     foreign key (user_account_id) references user_account(id),

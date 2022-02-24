@@ -1,5 +1,5 @@
 create table award (
-    id bigint primary key,
+    id bigint auto_increment primary key,
     price bigint,
     name varchar(100),
     company_id bigint unique,
