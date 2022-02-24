@@ -28,6 +28,7 @@ public class UserService {
                 .login(createUserDto.getLogin())
                 .password(createUserDto.getPassword())
                 .pesel(createUserDto.getPesel())
+                .email(createUserDto.getEmail())
                 .creationDate(LocalDateTime.now())
                 .build();
     }

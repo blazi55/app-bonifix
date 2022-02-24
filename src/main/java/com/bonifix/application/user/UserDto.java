@@ -18,6 +18,7 @@ public class UserDto {
     private String firstname;
     private String lastname;
     private String pesel;
+    private String email;
     private LocalDateTime creationDate;
 
 }
