@@ -41,6 +41,10 @@ public class User {
     @NotNull
     private String pesel;
 
+    @Column(unique = true)
+    @NotNull
+    private String email;
+
     @Column
     @NotNull
     private LocalDateTime creationDate;
