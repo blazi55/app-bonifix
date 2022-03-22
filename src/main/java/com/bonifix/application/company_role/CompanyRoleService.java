@@ -21,11 +21,9 @@ public class CompanyRoleService {
     private final UserRepository userRepository;
     private final CompanyRoleMapper companyRoleMapper;
 
-
     @Transactional
     public CompanyRoleDto registerAdminRole(CreateCompanyRoleDto createCompanyRoleDto) {
         return registerUserRole(createCompanyRoleDto, ADMINISTRATOR);
-
     }
 
     @Transactional
