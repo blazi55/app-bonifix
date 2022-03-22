@@ -2,6 +2,7 @@ package com.bonifix.application.company_role;
 import com.bonifix.application.company.CompanyRepository;
 import com.bonifix.application.tables.Company;
 import com.bonifix.application.tables.CompanyRole;
+import com.bonifix.application.tables.Role;
 import com.bonifix.application.tables.User;
 import com.bonifix.application.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,23 +24,20 @@ public class CompanyRoleService {
 
     @Transactional
     public CompanyRoleDto registerAdminRole(CreateCompanyRoleDto createCompanyRoleDto) {
-        final Company company = findCompany(createCompanyRoleDto.getCompanyId());
-        final User user = findUser(createCompanyRoleDto.getUserEmail());
-        final CompanyRole companyRole = CompanyRole.builder()
-                .role(String.valueOf(ADMINISTRATOR))
-                .user(user)
-                .company(company)
-                .build();
-        companyRoleRepository.save(companyRole);
-        return companyRoleMapper.toDto(companyRole);
+        return registerUserRole(createCompanyRoleDto, ADMINISTRATOR);
+
     }
 
     @Transactional
     public CompanyRoleDto registerUserRole(CreateCompanyRoleDto createCompanyRoleDto) {
+        return registerUserRole(createCompanyRoleDto, USER);
+    }
+
+    private CompanyRoleDto registerUserRole(CreateCompanyRoleDto createCompanyRoleDto, Role role) {
         final Company company = findCompany(createCompanyRoleDto.getCompanyId());
         final User user = findUser(createCompanyRoleDto.getUserEmail());
         final CompanyRole companyRole = CompanyRole.builder()
-                .role(String.valueOf(USER))
+                .role(String.valueOf(role))
                 .user(user)
                 .company(company)
                 .build();
