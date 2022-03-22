@@ -17,11 +17,13 @@ import java.util.List;
 @NoArgsConstructor
 public class Company {
 
+    //TODO 16.03 dodać musze unique do brakujących pól
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
     @NotNull
     private String name;
 

@@ -1,6 +1,6 @@
 create table company (
     id bigint auto_increment primary key,
-    name varchar(100)
+    name varchar(100) unique
 );
 
 create table company_role (

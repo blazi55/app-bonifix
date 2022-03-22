@@ -14,7 +14,7 @@ public class CompanyService {
 
     @Transactional
     public CompanyDto createCompany(CompanyDto companyDto) {
-        //TODO Sprawdzic czy id jest null, w przeciwnym wypadku wyrzucic wyjatek.
+        //TODO 16.03 Sprawdzic musze czy id jest null, w przeciwnym wypadku wyrzucic wyjatek.
         final Company company = this.companyMapper.toEntity(companyDto);
         this.companyRepository.save(company);
         return this.companyMapper.toDto(company);

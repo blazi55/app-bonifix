@@ -17,11 +17,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class User {
 
+    //TODO 16.03 dodać musze unique do brakujących pól (pesel, login)
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
     @NotNull
     private String login;
 
@@ -37,7 +39,7 @@ public class User {
     @NotNull
     private String lastname;
 
-    @Column
+    @Column(unique = true)
     @NotNull
     private String pesel;
 
@@ -49,7 +51,7 @@ public class User {
     @NotNull
     private LocalDateTime creationDate;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.PERSIST)
     private UserAccount userAccount;
 
     @OneToOne(mappedBy = "user")
