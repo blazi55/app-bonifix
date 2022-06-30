@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class User {
 
-    //TODO 16.03 dodać musze unique do brakujących pól (pesel, login)
+    //TODO dodać musze unique do brakujących pól (pesel, login)
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
